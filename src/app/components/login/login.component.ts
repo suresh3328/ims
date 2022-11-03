@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/login.service';
 
 @Component({
   selector: 'app-login',
@@ -16,11 +18,21 @@ export class LoginComponent implements OnInit {
   )
   
 
-  constructor() { }
+  constructor(private _loginService:LoginService, private router:Router) { }
 
   ngOnInit(): void {
   }
+
   login(){
+    this. _loginService. login(this.loginForm.value).subscribe(
+      (data:any)=>{
+        sessionStorage.setItem("my-application-token",data.token)
+        this.router.navigateByUrl("/dashboard");
+      },
+      (err:any)=>{
+        alert("{invalied credentials");
+      }
+    )
 
   }
 
