@@ -10,6 +10,7 @@ import { ComponentsComponent } from './components/components.component';
 import { ServicesComponent } from './services/services.component';
 import { GuardsComponent } from './guards/guards.component';
 import { PipesComponent } from './pipes/pipes.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,9 @@ import { PipesComponent } from './pipes/pipes.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

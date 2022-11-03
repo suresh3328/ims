@@ -1,17 +1,17 @@
-<p>login works!</p>
+
 
 <div class="parent">
     <div class="child">
       <form>
            <label>Email:</label>
-           <input type="text">
+           <input type="text" formControlName="email">
            <br><br>
 
            <label>Password:</label>
-           <input type="password">
+           <input type="password" formControlName="password">
            <br><br>
 
-          <button>Login</button>
+          <button (click)="login()">Login</button>
 
     
       </form>
